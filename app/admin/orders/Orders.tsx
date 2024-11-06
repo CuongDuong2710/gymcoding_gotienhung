@@ -13,18 +13,18 @@ export default function Orders() {
 
   return (
     <div>
-      <h1 className='py-4 text-2xl'>Orders</h1>
+      <h1 className='py-4 text-2xl'>Đơn hàng</h1>
       <div className='overflow-x-auto'>
         <table className='table'>
           <thead>
             <tr>
               <th>ID</th>
-              <th>USER</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTION</th>
+              <th>Khách hàng</th>
+              <th>Ngày</th>
+              <th>Tổng cộng</th>
+              <th>Thanh toán</th>
+              <th>Giao hàng</th>
+              <th>Xem chi tiết</th>
             </tr>
           </thead>
           <tbody>
@@ -37,16 +37,16 @@ export default function Orders() {
                 <td>
                   {order.isPaid && order.paidAt
                     ? `${order.paidAt.substring(0, 10)}`
-                    : 'not paid'}
+                    : 'Chưa thanh toán'}
                 </td>
                 <td>
                   {order.isDelivered && order.deliveredAt
                     ? `${order.deliveredAt.substring(0, 10)}`
-                    : 'not delivered'}
+                    : 'Chưa giao hàng'}
                 </td>
                 <td>
                   <Link href={`/order/${order._id}`} passHref>
-                    Details
+                    Chi tiết
                   </Link>
                 </td>
               </tr>

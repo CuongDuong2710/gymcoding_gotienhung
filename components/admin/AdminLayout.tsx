@@ -31,7 +31,7 @@ const AdminLayout = async ({
                 className={'dashboard' === activeItem ? 'active' : ''}
                 href='/admin/dashboard'
               >
-                Dashboard
+                Tổng quan
               </Link>
             </li>
             <li>
@@ -39,7 +39,7 @@ const AdminLayout = async ({
                 className={'orders' === activeItem ? 'active' : ''}
                 href='/admin/orders'
               >
-                Orders
+                Đơn hàng
               </Link>
             </li>
             <li>
@@ -47,7 +47,7 @@ const AdminLayout = async ({
                 className={'products' === activeItem ? 'active' : ''}
                 href='/admin/products'
               >
-                Products
+                Sản phẩm
               </Link>
             </li>
             <li>
@@ -55,7 +55,7 @@ const AdminLayout = async ({
                 className={'users' === activeItem ? 'active' : ''}
                 href='/admin/users'
               >
-                Users
+                Người dùng
               </Link>
             </li>
           </ul>

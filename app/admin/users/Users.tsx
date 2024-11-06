@@ -42,10 +42,10 @@ export default function Users() {
           <thead>
             <tr>
               <th>id</th>
-              <th>name</th>
-              <th>email</th>
-              <th>admin</th>
-              <th>actions</th>
+              <th>Tên</th>
+              <th>Email</th>
+              <th>Admin</th>
+              <th>Hành động</th>
             </tr>
           </thead>
           <tbody>
@@ -62,7 +62,7 @@ export default function Users() {
                     type='button'
                     className='btn btn-ghost btn-sm'
                   >
-                    Edit
+                    Sửa
                   </Link>
                   &nbsp;
                   <button
@@ -70,7 +70,7 @@ export default function Users() {
                     type='button'
                     className='btn btn-ghost btn-sm'
                   >
-                    Delete
+                    Xoá
                   </button>
                 </td>
               </tr>

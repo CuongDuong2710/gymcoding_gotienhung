@@ -58,14 +58,14 @@ export default function Products() {
   return (
     <div>
       <div className='flex items-center justify-between'>
-        <h1 className='py-4 text-2xl'>Products</h1>
+        <h1 className='py-4 text-2xl'>Sản phẩm</h1>
         <button
           disabled={isCreating}
           onClick={() => createProduct()}
           className='btn btn-primary btn-sm'
         >
           {isCreating && <span className='loading loading-spinner'></span>}
-          Create
+          Tạo mới
         </button>
       </div>
 
@@ -74,12 +74,12 @@ export default function Products() {
           <thead>
             <tr>
               <th>id</th>
-              <th>name</th>
-              <th>price</th>
-              <th>category</th>
-              <th>count in stock</th>
-              <th>rating</th>
-              <th>actions</th>
+              <th>Tên</th>
+              <th>Giá</th>
+              <th>Thư mục</th>
+              <th>Kho hàng</th>
+              <th>Đánh giá</th>
+              <th>Hành động</th>
             </tr>
           </thead>
           <tbody>
@@ -97,7 +97,7 @@ export default function Products() {
                     type='button'
                     className='btn btn-ghost btn-sm'
                   >
-                    Edit
+                    Sửa
                   </Link>
                   &nbsp;
                   <button
@@ -105,7 +105,7 @@ export default function Products() {
                     type='button'
                     className='btn btn-ghost btn-sm'
                   >
-                    Delete
+                    Xoá
                   </button>
                 </td>
               </tr>

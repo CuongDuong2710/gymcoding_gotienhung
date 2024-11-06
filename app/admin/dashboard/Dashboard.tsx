@@ -54,7 +54,7 @@ const Dashboard = () => {
     datasets: [
       {
         fill: true,
-        label: 'Sales',
+        label: 'Doanh thu',
         data: summary.salesData.map(
           (x: { totalSales: number }) => x.totalSales,
         ),
@@ -68,7 +68,7 @@ const Dashboard = () => {
     datasets: [
       {
         fill: true,
-        label: 'Orders',
+        label: 'Đơn hàng',
         data: summary.salesData.map(
           (x: { totalOrders: number }) => x.totalOrders,
         ),
@@ -108,7 +108,7 @@ const Dashboard = () => {
     labels: summary.usersData.map((x: { _id: string }) => x._id), // 2022/01 2022/03
     datasets: [
       {
-        label: 'Users',
+        label: 'Người dùng',
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(75, 136, 177, 0.5)',
         data: summary.usersData.map(
@@ -122,55 +122,55 @@ const Dashboard = () => {
     <div>
       <div className='stats stats-vertical my-4 inline-grid shadow md:stats-horizontal md:flex'>
         <div className='stat'>
-          <div className='stat-title'>Sales</div>
+          <div className='stat-title'>Doanh thu</div>
           <div className='stat-value text-primary'>
             ${formatNumber(summary.ordersPrice)}
           </div>
           <div className='stat-desc'>
-            <Link href='/admin/orders'>View sales</Link>
+            <Link href='/admin/orders'>Xem đơn hàng</Link>
           </div>
         </div>
         <div className='stat'>
-          <div className='stat-title'> Orders</div>
+          <div className='stat-title'>Đơn hàng</div>
           <div className='stat-value text-primary'>{summary.ordersCount}</div>
           <div className='stat-desc'>
-            <Link href='/admin/orders'>View orders</Link>
+            <Link href='/admin/orders'>Xem đơn hàng</Link>
           </div>
         </div>
         <div className='stat'>
-          <div className='stat-title'>Products</div>
+          <div className='stat-title'>Sản phẩm</div>
           <div className='stat-value text-primary'>{summary.productsCount}</div>
           <div className='stat-desc'>
-            <Link href='/admin/products'>View products</Link>
+            <Link href='/admin/products'>Xem sản phẩm</Link>
           </div>
         </div>
         <div className='stat'>
-          <div className='stat-title'>Users</div>
+          <div className='stat-title'>Người dùng</div>
           <div className='stat-value text-primary'>{summary.usersCount}</div>
           <div className='stat-desc'>
-            <Link href='/admin/users'>View users</Link>
+            <Link href='/admin/users'>Xem người dùng</Link>
           </div>
         </div>
       </div>
       <div className='grid gap-4 md:grid-cols-2'>
         <div>
-          <h2 className='py-2 text-xl'>Sales Report</h2>
+          <h2 className='py-2 text-xl'>Báo cáo doanh thu</h2>
           <Line data={salesData} />
         </div>
         <div>
-          <h2 className='py-2 text-xl'>Orders Report</h2>
+          <h2 className='py-2 text-xl'>Báo cáo đơn hàng</h2>
           <Line data={ordersData} />
         </div>
       </div>
       <div className='grid gap-4 md:grid-cols-2'>
         <div>
-          <h2 className='py-2 text-xl'>Products Report</h2>
+          <h2 className='py-2 text-xl'>Báo cáo sản phẩm</h2>
           <div className='flex h-80 w-96 items-center justify-center '>
             <Doughnut data={productsData} />
           </div>
         </div>
         <div>
-          <h2 className='py-2 text-xl'>Users Report</h2>
+          <h2 className='py-2 text-xl'>Báo cáo người dùng</h2>
           <Bar data={usersData} />
         </div>
       </div>

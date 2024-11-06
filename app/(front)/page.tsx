@@ -12,10 +12,9 @@ import Text from '@/components/readMore/Text';
 import Slider from '@/components/slider/Slider';
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_APP_NAME || 'Fullstack Next.js Store',
+  title: process.env.NEXT_PUBLIC_APP_NAME,
   description:
-    process.env.NEXT_PUBLIC_APP_DESC ||
-    'Fullstack Next.js Store - Server Components, MongoDB, Next Auth, Tailwind, Zustand',
+    process.env.NEXT_PUBLIC_APP_DESC,
 };
 
 const HomePage = () => {

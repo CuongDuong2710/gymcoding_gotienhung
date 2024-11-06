@@ -90,7 +90,7 @@ export default function UserEditForm({ userId }: { userId: string }) {
       <h1 className='py-4 text-2xl'>Edit User {formatId(userId)}</h1>
       <div>
         <form onSubmit={handleSubmit(formSubmit)}>
-          <FormInput name='Name' id='name' required />
+          <FormInput name='Tên' id='name' required />
           <FormInput name='Email' id='email' required />
 
           <div className='my-3 md:flex'>
@@ -113,10 +113,10 @@ export default function UserEditForm({ userId }: { userId: string }) {
             className='btn btn-primary'
           >
             {isUpdating && <span className='loading loading-spinner'></span>}
-            Update
+            Cập nhật
           </button>
           <Link className='btn ml-4' href='/admin/users'>
-            Cancel
+            Thoát
           </Link>
         </form>
       </div>

@@ -36,10 +36,10 @@ export const SearchBox = () => {
           name='category'
           defaultValue={formCategory}
           aria-label='Category'
-          className='join-item select select-bordered w-[90px]'
+          className='join-item select select-bordered w-[100px]'
           onChange={(e) => setFormCategory(e.target.value)}
         >
-          <option value='all'>All</option>
+          <option value='all'>Tất cả</option>
           {categories?.map((c: string) => (
             <option key={c} value={c}>
               {c}
@@ -48,14 +48,14 @@ export const SearchBox = () => {
         </select>
         <input
           className='input join-item input-bordered w-40 sm:w-44'
-          placeholder='Search'
+          placeholder='Tìm kiếm'
           aria-label='Search'
           defaultValue={q}
           name='q'
           onChange={(e) => setFormQuery(e.target.value)}
         />
         <button className='btn join-item input-bordered' type='submit'>
-          Search
+          Tìm kiếm
         </button>
       </div>
     </form>

@@ -3,7 +3,7 @@ import AdminLayout from '@/components/admin/AdminLayout';
 import Orders from './Orders';
 
 export const metadata = {
-  title: 'Admin Orders',
+  title: 'Đơn hàng Admin',
 };
 const AdminOrdersPage = () => {
   return (

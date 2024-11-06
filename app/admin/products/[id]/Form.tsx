@@ -126,15 +126,15 @@ export default function ProductEditForm({ productId }: { productId: string }) {
 
   return (
     <div>
-      <h1 className='py-4 text-2xl'>Edit Product {formatId(productId)}</h1>
+      <h1 className='py-4 text-2xl'>Cập nhật Sản phẩm {formatId(productId)}</h1>
       <div>
         <form onSubmit={handleSubmit(formSubmit)}>
-          <FormInput name='Name' id='name' required />
+          <FormInput name='Tên' id='name' required />
           <FormInput name='Slug' id='slug' required />
-          <FormInput name='Image' id='image' required />
+          <FormInput name='Ảnh' id='image' required />
           <div className='mb-6 md:flex'>
             <label className='label md:w-1/5' htmlFor='imageFile'>
-              Upload Image
+              Upload ảnh
             </label>
             <div className='md:w-4/5'>
               <input
@@ -145,11 +145,11 @@ export default function ProductEditForm({ productId }: { productId: string }) {
               />
             </div>
           </div>
-          <FormInput name='Price' id='price' required />
-          <FormInput name='Category' id='category' required />
-          <FormInput name='Brand' id='brand' required />
-          <FormInput name='Description' id='description' required />
-          <FormInput name='Count In Stock' id='countInStock' required />
+          <FormInput name='Giá' id='price' required />
+          <FormInput name='Thư mục' id='category' required />
+          <FormInput name='Hiệu' id='brand' required />
+          <FormInput name='Mô tả' id='description' required />
+          <FormInput name='Số lượng kho hàng' id='countInStock' required />
 
           <button
             type='submit'
@@ -157,10 +157,10 @@ export default function ProductEditForm({ productId }: { productId: string }) {
             className='btn btn-primary'
           >
             {isUpdating && <span className='loading loading-spinner'></span>}
-            Update
+            Cập nhật
           </button>
           <Link className='btn ml-4 ' href='/admin/products'>
-            Cancel
+            Thoát
           </Link>
         </form>
       </div>

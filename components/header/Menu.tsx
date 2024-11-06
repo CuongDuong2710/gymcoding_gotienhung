@@ -68,19 +68,19 @@ const Menu = () => {
               >
                 {session.user.isAdmin && (
                   <li onClick={handleClick}>
-                    <Link href='/admin/dashboard'>Admin Dashboard</Link>
+                    <Link href='/admin/dashboard'>Trang quản trị</Link>
                   </li>
                 )}
 
                 <li onClick={handleClick}>
-                  <Link href='/order-history'>Order history </Link>
+                  <Link href='/order-history'>Lịch sử đơn hàng</Link>
                 </li>
                 <li onClick={handleClick}>
-                  <Link href='/profile'>Profile</Link>
+                  <Link href='/profile'>Cá nhân</Link>
                 </li>
                 <li onClick={handleClick}>
                   <button type='button' onClick={signOutHandler}>
-                    Sign out
+                    Đăng xuất
                   </button>
                 </li>
               </ul>

@@ -17,7 +17,7 @@ const Header = () => {
               href='/'
               className='ml-2 text-base font-semibold sm:ml-4 sm:text-lg'
             >
-              Fashion Corner
+              Gỗ Tiến Hưng
             </Link>
           </div>
           <Menu />

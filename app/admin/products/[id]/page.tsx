@@ -4,7 +4,7 @@ import Form from './Form';
 
 export function generateMetadata({ params }: { params: { id: string } }) {
   return {
-    title: `Edit Product ${params.id}`,
+    title: `Cập nhật sản phẩm ${params.id}`,
   };
 }
 

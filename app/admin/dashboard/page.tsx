@@ -3,7 +3,7 @@ import AdminLayout from '@/components/admin/AdminLayout';
 import Dashboard from './Dashboard';
 
 export const metadata = {
-  title: 'Admin Dashboard',
+  title: 'Tổng quan Admin',
 };
 const DashbaordPage = () => {
   return (
