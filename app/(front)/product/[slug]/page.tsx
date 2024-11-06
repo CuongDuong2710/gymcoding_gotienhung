@@ -6,7 +6,7 @@ import { getPlaiceholder } from 'plaiceholder';
 import AddToCart from '@/components/products/AddToCart';
 import { Rating } from '@/components/products/Rating';
 import productService from '@/lib/services/productService';
-import { convertDocToObj } from '@/lib/utils';
+import { convertDocToObj, VNDFormatter } from '@/lib/utils';
 
 export const generateMetadata = async ({
   params,
@@ -81,7 +81,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
             <div className='card-body'>
               <div className='flex justify-between'>
                 <div>Giá</div>
-                <div>{product.price} VND</div>
+                <div>{VNDFormatter.format(product.price)}</div>
               </div>
               <div className='mb-2 flex justify-between'>
                 <div>Trạng thái</div>

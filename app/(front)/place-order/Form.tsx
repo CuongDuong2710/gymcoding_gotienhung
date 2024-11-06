@@ -12,6 +12,7 @@ import useCartService from '@/lib/hooks/useCartStore';
 
 import image_qr_bank from '../../../public/images/bidv_qr_Tin.png'
 import image_qr_momo from '../../../public/images/qr_momo_Tin.png'
+import { VNDFormatter } from '@/lib/utils';
 
 const Form = () => {
   const router = useRouter();
@@ -141,7 +142,7 @@ const Form = () => {
                       <td>
                         <span>{item.qty}</span>
                       </td>
-                      <td>${item.price}</td>
+                      <td>{VNDFormatter.format(item.price)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -163,13 +164,13 @@ const Form = () => {
                 <li>
                   <div className=' flex justify-between'>
                     <div>Sản phẩm</div>
-                    <div>${itemsPrice}</div>
+                    <div>{VNDFormatter.format(itemsPrice)}</div>
                   </div>
                 </li>
                 <li>
                   <div className=' flex justify-between'>
                     <div>Tổng cộng</div>
-                    <div>${totalPrice}</div>
+                    <div>{VNDFormatter.format(totalPrice)}</div>
                   </div>
                 </li>
                 <div className="flex items-center justify-center my-4">

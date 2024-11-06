@@ -7,7 +7,7 @@ import useSWR from 'swr';
 import useSWRMutation from 'swr/mutation';
 
 import { Product } from '@/lib/models/ProductModel';
-import { formatId } from '@/lib/utils';
+import { formatId, VNDFormatter } from '@/lib/utils';
 
 export default function Products() {
   const { data: products, error } = useSWR(`/api/admin/products`);
@@ -87,7 +87,7 @@ export default function Products() {
               <tr key={product._id}>
                 <td>{formatId(product._id!)}</td>
                 <td>{product.name}</td>
-                <td>${product.price}</td>
+                <td>{VNDFormatter.format(product.price)}</td>
                 <td>{product.category}</td>
                 <td>{product.countInStock}</td>
                 <td>{product.rating}</td>

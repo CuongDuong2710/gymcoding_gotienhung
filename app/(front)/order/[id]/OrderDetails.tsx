@@ -9,6 +9,7 @@ import useSWR from 'swr';
 import useSWRMutation from 'swr/mutation';
 
 import { OrderItem } from '@/lib/models/OrderModel';
+import { VNDFormatter } from '@/lib/utils';
 
 interface IOrderDetails {
   orderId: string;
@@ -149,7 +150,7 @@ const OrderDetails = ({ orderId, paypalClientId }: IOrderDetails) => {
                         </Link>
                       </td>
                       <td>{item.qty}</td>
-                      <td>${item.price}</td>
+                      <td>{VNDFormatter.format(item.price)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -166,13 +167,13 @@ const OrderDetails = ({ orderId, paypalClientId }: IOrderDetails) => {
                 <li>
                   <div className='mb-2 flex justify-between'>
                     <div>Sản phẩm</div>
-                    <div>{itemsPrice} VND</div>
+                    <div>{VNDFormatter.format(itemsPrice)}</div>
                   </div>
                 </li>
                 <li>
                   <div className='mb-2 flex justify-between'>
                     <div>Tổng cộng</div>
-                    <div>{totalPrice} VND</div>
+                    <div>{VNDFormatter.format(totalPrice)}</div>
                   </div>
                 </li>
 

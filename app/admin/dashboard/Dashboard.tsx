@@ -17,7 +17,7 @@ import Link from 'next/link';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
 import useSWR from 'swr';
 
-import { formatNumber } from '@/lib/utils';
+import { VNDFormatter } from '@/lib/utils';
 
 ChartJS.register(
   CategoryScale,
@@ -124,7 +124,7 @@ const Dashboard = () => {
         <div className='stat'>
           <div className='stat-title'>Doanh thu</div>
           <div className='stat-value text-primary'>
-            ${formatNumber(summary.ordersPrice)}
+            {VNDFormatter.format(summary.ordersPrice)}
           </div>
           <div className='stat-desc'>
             <Link href='/admin/orders'>Xem đơn hàng</Link>

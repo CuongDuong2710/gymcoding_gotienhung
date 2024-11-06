@@ -22,5 +22,8 @@ export const formatId = (x: string) => {
   return `..${x.substring(20, 24)}`;
 };
 
-export const delay = (ms: number) =>
+export const delay = (ms: number) => {
   new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+export const VNDFormatter = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }) 

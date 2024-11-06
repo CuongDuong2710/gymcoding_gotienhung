@@ -6,6 +6,7 @@ import React from 'react';
 import useSWR from 'swr';
 
 import { Order } from '@/lib/models/OrderModel';
+import { VNDFormatter } from '@/lib/utils';
 
 const MyOrders = () => {
   const router = useRouter();
@@ -35,7 +36,7 @@ const MyOrders = () => {
               <td className='whitespace-nowrap'>
                 {order.createdAt.substring(0, 10)}
               </td>
-              <td>${order.totalPrice}</td>
+              <td>{VNDFormatter.format(order.totalPrice)}</td>
               <td>
                 {order.isPaid && order.paidAt
                   ? `${order.paidAt.substring(0, 10)}`

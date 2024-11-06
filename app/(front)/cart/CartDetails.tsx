@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import useCartService from '@/lib/hooks/useCartStore';
+import { VNDFormatter } from '@/lib/utils';
 
 const CartDetails = () => {
   const { items, itemsPrice, decrease, increase } = useCartService();
@@ -75,7 +76,7 @@ const CartDetails = () => {
                         </button>
                       </div>
                     </td>
-                    <td>$ {item.price}</td>
+                    <td>{VNDFormatter.format(item.price)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -86,7 +87,7 @@ const CartDetails = () => {
               <ul>
                 <li className='pb-3 text-xl'>
                   Số lượng: {items.reduce((acc, item) => acc + item.qty, 0)}
-                  <br />{itemsPrice} VND
+                  <br />{VNDFormatter.format(itemsPrice)}
                 </li>
                 <li>
                   <button

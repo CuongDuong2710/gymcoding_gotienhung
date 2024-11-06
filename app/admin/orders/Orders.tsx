@@ -4,6 +4,7 @@ import Link from 'next/link';
 import useSWR from 'swr';
 
 import { Order } from '@/lib/models/OrderModel';
+import { VNDFormatter } from '@/lib/utils';
 
 export default function Orders() {
   const { data: orders, error, isLoading } = useSWR(`/api/admin/orders`);
@@ -33,7 +34,7 @@ export default function Orders() {
                 <td>..{order._id.substring(20, 24)}</td>
                 <td>{order.user?.name || 'Deleted user'}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
-                <td>${order.totalPrice}</td>
+                <td>{VNDFormatter.format(order.totalPrice)}</td>
                 <td>
                   {order.isPaid && order.paidAt
                     ? `${order.paidAt.substring(0, 10)}`
