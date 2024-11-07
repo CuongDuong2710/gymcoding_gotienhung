@@ -1,6 +1,7 @@
 import { auth } from '@/lib/auth'
 import dbConnect from '@/lib/dbConnect'
 import OrderModel from '@/lib/models/OrderModel'
+import { timeZoneVietNam } from '@/lib/utils'
 
 export const PUT = auth(async (...args: any) => {
     const [req, { params }] = args
@@ -16,9 +17,12 @@ export const PUT = auth(async (...args: any) => {
         await dbConnect()
 
         const order = await OrderModel.findById(params.id)
+        const now = new Date(Date.now())
+        now.setHours(now.getHours() + 7)
+
         if (order && !order.isPaid) {
             order.isPaid = true;
-            order.paidAt = Date.now()
+            order.paidAt = timeZoneVietNam()
             const updatedOrder = await order.save()
             return Response.json(updatedOrder)
         } else {

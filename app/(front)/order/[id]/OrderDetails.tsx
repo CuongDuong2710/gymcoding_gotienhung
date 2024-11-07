@@ -9,7 +9,7 @@ import useSWR from 'swr';
 import useSWRMutation from 'swr/mutation';
 
 import { OrderItem } from '@/lib/models/OrderModel';
-import { VNDFormatter } from '@/lib/utils';
+import { VNDFormatter, formattedDate } from '@/lib/utils';
 
 interface IOrderDetails {
   orderId: string;
@@ -30,7 +30,7 @@ const OrderDetails = ({ orderId, paypalClientId }: IOrderDetails) => {
       });
       const data = await res.json();
       res.ok
-        ? toast.success('Order delivered successfully')
+        ? toast.success('Đã giao hàng thành công')
         : toast.error(data.message);
     },
   );
@@ -81,10 +81,10 @@ const OrderDetails = ({ orderId, paypalClientId }: IOrderDetails) => {
               <p>{shippingAddress.fullName}</p>
               <p>
                 {shippingAddress.address}, {shippingAddress.city},{' '}
-                {shippingAddress.phone}, {shippingAddress.country}{' '}
+                {shippingAddress.phone}
               </p>
               {isDelivered ? (
-                <div className='text-success'>Giao lúc {deliveredAt}</div>
+                <div className='text-success'>Giao lúc {formattedDate(deliveredAt)}</div>
               ) : (
                 <div className='text-error'>Chưa giao hàng</div>
               )}
@@ -96,7 +96,7 @@ const OrderDetails = ({ orderId, paypalClientId }: IOrderDetails) => {
               <h2 className='card-title'>Phương thức thanh toán</h2>
               <p>{paymentMethod}</p>
               {isPaid ? (
-                <div className='text-success'>Thanh toán lúc {paidAt}</div>
+                <div className='text-success'>Thanh toán lúc {formattedDate(paidAt)}</div>
               ) : session?.user?.isAdmin ? (
                 <div className='text-error'>Chưa thanh toán</div>
               ) : (

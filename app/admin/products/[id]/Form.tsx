@@ -27,7 +27,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
       const data = await res.json();
       if (!res.ok) return toast.error(data.message);
 
-      toast.success('Product updated successfully');
+      toast.success('Cập nhật sản phẩm thành công');
       router.push('/admin/products');
     },
   );
@@ -114,7 +114,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
       const data = await res.json();
       console.log(data.secure_url);
       setValue('image', data.secure_url);
-      toast.success('File uploaded successfully', {
+      toast.success('Upload file thành công', {
         id: toastId,
       });
     } catch (err: any) {
@@ -146,7 +146,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
             </div>
           </div>
           <FormInput name='Giá' id='price' required />
-          <FormInput name='Thư mục' id='category' required />
+          <FormInput name='Danh mục' id='category' required />
           <FormInput name='Hiệu' id='brand' required />
           <FormInput name='Mô tả' id='description' required />
           <FormInput name='Số lượng kho hàng' id='countInStock' required />

@@ -27,7 +27,7 @@ export default function UserEditForm({ userId }: { userId: string }) {
       const data = await res.json();
       if (!res.ok) return toast.error(data.message);
 
-      toast.success('User updated successfully');
+      toast.success('Cập nhật user thành công');
       router.push('/admin/users');
     },
   );

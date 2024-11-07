@@ -22,7 +22,7 @@ export default function Users() {
       });
       const data = await res.json();
       res.ok
-        ? toast.success('User deleted successfully', {
+        ? toast.success('Xoá user thành công', {
             id: toastId,
           })
         : toast.error(data.message, {

@@ -48,7 +48,7 @@ export const PUT = auth(async (...p: any) => {
 
       const updatedUser = await user.save();
       return Response.json({
-        message: 'User updated successfully',
+        message: 'Cập nhật user thành công',
         user: updatedUser,
       });
     } else {
@@ -92,7 +92,7 @@ export const DELETE = auth(async (...args: any) => {
           },
         );
       await user.deleteOne();
-      return Response.json({ message: 'User deleted successfully' });
+      return Response.json({ message: 'Xoá user thành công' });
     } else {
       return Response.json(
         { message: 'User not found' },

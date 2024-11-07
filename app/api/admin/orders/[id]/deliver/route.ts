@@ -1,6 +1,7 @@
 import { auth } from '@/lib/auth';
 import dbConnect from '@/lib/dbConnect';
 import OrderModel from '@/lib/models/OrderModel';
+import { timeZoneVietNam } from '@/lib/utils';
 
 export const PUT = auth(async (...args: any) => {
   const [req, { params }] = args;
@@ -26,7 +27,7 @@ export const PUT = auth(async (...args: any) => {
           },
         );
       order.isDelivered = true;
-      order.deliveredAt = Date.now();
+      order.deliveredAt = timeZoneVietNam()
       const updatedOrder = await order.save();
       return Response.json(updatedOrder);
     } else {

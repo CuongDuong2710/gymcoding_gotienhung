@@ -26,7 +26,7 @@ export default function Products() {
       });
       const data = await res.json();
       res.ok
-        ? toast.success('Product deleted successfully', {
+        ? toast.success('Xoá sản phẩm thành công', {
             id: toastId,
           })
         : toast.error(data.message, {
@@ -47,7 +47,7 @@ export default function Products() {
       const data = await res.json();
       if (!res.ok) return toast.error(data.message);
 
-      toast.success('Product created successfully');
+      toast.success('Tạo mới sản phẩm thành công');
       router.push(`/admin/products/${data.product._id}`);
     },
   );
@@ -76,7 +76,7 @@ export default function Products() {
               <th>id</th>
               <th>Tên</th>
               <th>Giá</th>
-              <th>Thư mục</th>
+              <th>Danh mục</th>
               <th>Kho hàng</th>
               <th>Đánh giá</th>
               <th>Hành động</th>

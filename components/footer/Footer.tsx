@@ -2,8 +2,8 @@ const Footer = () => {
   return (
     <footer className='footer footer-center bg-base-300 p-4 text-base-content'>
       <p>
-        Copyright &copy; {new Date().getFullYear()} - All rights reserved by
-        Fashion Corner
+        Gỗ Tiến Hưng - Địa chỉ: 345 Điện Biên Phủ, phường Vĩnh Hoà, Nha Trang
+        <br /><strong>Hotline: 0777.777.085 - 0907.210.127 (Dương Hưng)</strong>
       </p>
     </footer>
   );

@@ -98,7 +98,7 @@ export const DELETE = auth(async (...args: any) => {
     const product = await ProductModel.findById(params.id);
     if (product) {
       await product.deleteOne();
-      return Response.json({ message: 'Product deleted successfully' });
+      return Response.json({ message: 'Xoá sản phẩm thành công' });
     } else {
       return Response.json(
         { message: 'Product not found' },

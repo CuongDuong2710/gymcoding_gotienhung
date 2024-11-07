@@ -53,7 +53,7 @@ const Form = () => {
         }),
       });
       if (res.status === 200) {
-        toast.success('Profile updated successfully');
+        toast.success('Cập nhật profile thành công');
         const newSession = {
           ...session,
           user: {

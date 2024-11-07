@@ -42,7 +42,7 @@ export const POST = auth(async (req: any) => {
   try {
     await product.save();
     return Response.json(
-      { message: 'Product created successfully', product },
+      { message: 'Tạo sản phẩm mới thành công', product },
       {
         status: 201,
       },

@@ -7,16 +7,16 @@ import productServices from '@/lib/services/productService';
 const sortOrders = ['newest', 'lowest', 'highest', 'rating'];
 const prices = [
   {
-    name: '$1 to $50',
-    value: '1-50',
+    name: '45.000 - 100.000',
+    value: '45000-100000',
   },
   {
-    name: '$51 to $200',
-    value: '51-200',
+    name: '100.000 - 500.000',
+    value: '100000-300000',
   },
   {
-    name: '$201 to $1000',
-    value: '201-1000',
+    name: '500.000 - 3.000.000',
+    value: '300000-1000000',
   },
 ];
 
@@ -105,7 +105,7 @@ export default async function SearchPage({
   return (
     <div className='grid md:grid-cols-5 md:gap-5'>
       <div>
-        <div className='py-2 text-xl'>Categories</div>
+        <div className='py-2 text-xl'>Danh mục</div>
         <div>
           <ul>
             <li>
@@ -115,7 +115,7 @@ export default async function SearchPage({
                 }`}
                 href={getFilterUrl({ c: 'all' })}
               >
-                Any
+                Bất kỳ
               </Link>
             </li>
             {categories.map((c: string) => (
@@ -133,7 +133,7 @@ export default async function SearchPage({
           </ul>
         </div>
         <div>
-          <div className='py-2 text-xl'>Price</div>
+          <div className='py-2 text-xl'>Giá</div>
           <ul>
             <li>
               <Link
@@ -142,7 +142,7 @@ export default async function SearchPage({
                 }`}
                 href={getFilterUrl({ p: 'all' })}
               >
-                Any
+                Bất kỳ
               </Link>
             </li>
             {prices.map((p) => (
@@ -160,7 +160,7 @@ export default async function SearchPage({
           </ul>
         </div>
         <div>
-          <div className='py-2 text-xl'>Customer Review</div>
+          <div className='py-2 text-xl'>Đánh giá</div>
           <ul className='flex flex-col gap-1'>
             <li>
               <Link
@@ -169,7 +169,7 @@ export default async function SearchPage({
                   'all' === rating && 'link-primary'
                 }`}
               >
-                Any
+                Bất kỳ
               </Link>
             </li>
             {ratings.map((r) => (
@@ -190,7 +190,7 @@ export default async function SearchPage({
       <div className='md:col-span-4'>
         <div className='flex flex-col justify-between py-4 md:flex-row'>
           <div className='flex items-center'>
-            {products.length === 0 ? 'No' : countProducts} Results
+            {products.length === 0 ? 'No' : countProducts} Kết quả
             {q !== 'all' && q !== '' && ' : ' + q}
             {category !== 'all' && ' : ' + category}
             {price !== 'all' && ' : Price ' + price}
@@ -201,7 +201,7 @@ export default async function SearchPage({
             rating !== 'all' ||
             price !== 'all' ? (
               <Link className='btn btn-ghost btn-sm' href='/search'>
-                Clear
+                Xoá
               </Link>
             ) : null}
           </div>
