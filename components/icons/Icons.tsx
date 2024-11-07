@@ -25,7 +25,7 @@ const Icons = () => {
         <LockKeyhole width={48} height={48} strokeWidth={1} />
         <div className='flex flex-col gap-2'>
           <p>
-            <strong>Chất lượng</strong>
+            <strong>Chất lượng nhập khẩu</strong>
           </p>
           <p>Gỗ cao cấp nhập khẩu</p>
         </div>
@@ -34,9 +34,9 @@ const Icons = () => {
         <Phone width={48} height={48} strokeWidth={1} />
         <div className='flex flex-col gap-2'>
           <p>
-            <strong>Hỗ trợ tận tình</strong>
+            <strong>Hotline: 0777.777.085</strong> hoặc
           </p>
-          <p>Điện thoại và email</p>
+          <p><strong>0907.210.127</strong> (Dương Hưng)</p>
         </div>
       </div>
     </div>

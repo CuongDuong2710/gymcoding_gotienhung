@@ -28,14 +28,14 @@ const HomePage = () => {
       <div className='flex flex-col gap-8 md:flex-row'>
         <div className='flex-1'>
           <p className='text-nowrap text-4xl font-semibold md:text-6xl'>
-            Simply Unique/ <br /> Simply Better.
+            Đơn giản & Chất lượng
           </p>
         </div>
         <div className='flex flex-1 items-center'>
           <div>
-            <span className='font-bold'>Fashion Corner</span> is a gift &
-            clothes store based in HCMC, <br className='hidden sm:inline' />
-            Vietnam. Est since 2019.
+            <span className='font-bold'>Gỗ Tiến Hưng</span> chuyên cung cấp các loại gỗ nhập khẩu từ khắp nơi trên thế giới
+            <br className='hidden sm:inline' />
+            Nha Trang - Việt Nam. Since 2024.
           </div>
         </div>
       </div>

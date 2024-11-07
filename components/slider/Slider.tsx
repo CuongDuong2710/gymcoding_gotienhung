@@ -9,7 +9,7 @@ const Slider = async () => {
 
   return (
     <div>
-      <h2 className='my-2 text-2xl md:my-4'>Top Rated</h2>
+      <h2 className='my-2 text-2xl md:my-4'>Top đánh giá</h2>
       <CardSlider>
         {/*Wrap for SSR */}
         {topRated.map((product) => (

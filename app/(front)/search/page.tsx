@@ -190,7 +190,7 @@ export default async function SearchPage({
       <div className='md:col-span-4'>
         <div className='flex flex-col justify-between py-4 md:flex-row'>
           <div className='flex items-center'>
-            {products.length === 0 ? 'No' : countProducts} Kết quả
+            {products.length === 0 ? 'Không' : countProducts} Kết quả
             {q !== 'all' && q !== '' && ' : ' + q}
             {category !== 'all' && ' : ' + category}
             {price !== 'all' && ' : Price ' + price}
