@@ -26,4 +26,26 @@ export const delay = (ms: number) => {
   new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export const VNDFormatter = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }) 
+export const VNDFormatter = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' })
+
+// get UTC + 7
+export const timeZoneVietNam = () => {
+  const now = new Date(Date.now())
+  now.setHours(now.getHours() + 7)
+
+  return now
+}
+
+export const formattedDate = (now: Date) => {
+  const nowString = new Date(now)
+  const day = String(nowString.getDate()).padStart(2, '0')
+  const month = String(nowString.getMonth() + 1).padStart(2, '0') // Months are 0-indexed
+  const year = nowString.getFullYear()
+
+  const hours = String(nowString.getHours()).padStart(2, '0')
+  const minutes = String(nowString.getMinutes()).padStart(2, '0')
+  const seconds = String(nowString.getSeconds()).padStart(2, '0')
+
+  const date = `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`
+  return date
+}
