@@ -23,7 +23,6 @@ const Form = () => {
       address: '',
       city: '',
       phone: '',
-      country: '',
     },
   });
 
@@ -32,7 +31,6 @@ const Form = () => {
     setValue('address', shippingAddress.address);
     setValue('city', shippingAddress.city);
     setValue('phone', shippingAddress.phone);
-    setValue('country', shippingAddress.country);
   }, [setValue, shippingAddress]);
 
   const formSubmit: SubmitHandler<ShippingAddress> = async (form) => {
@@ -81,7 +79,6 @@ const Form = () => {
             <FormInput name='Địa chỉ' id='address' required />
             <FormInput name='Thành phố/ Tỉnh' id='city' required />
             <FormInput name='Số điện thoại' id='phone' required />
-            <FormInput name='Quốc gia' id='country' required />
             <div className='my-2'>
               <button
                 type='submit'

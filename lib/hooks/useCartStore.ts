@@ -27,7 +27,6 @@ const initialState: Cart = {
     address: '',
     city: '',
     phone: '',
-    country: '',
   },
 };
 

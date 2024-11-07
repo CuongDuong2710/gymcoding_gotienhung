@@ -26,7 +26,6 @@ const orderSchema = new mongoose.Schema(
       address: { type: String, required: true },
       city: { type: String, required: true },
       phone: { type: String, required: true },
-      country: { type: String, required: true },
     },
     paymentMethod: { type: String, required: true },
     paymentResult: {
@@ -62,7 +61,6 @@ export type Order = {
     address: string;
     city: string;
     phone: string;
-    country: string;
   };
   paymentMethod: string;
   paymentResult?: { id: string; status: string; email_address: string };
@@ -92,5 +90,4 @@ export type ShippingAddress = {
   address: string;
   city: string;
   phone: string;
-  country: string;
 };
