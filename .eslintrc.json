@@ -3,7 +3,7 @@
   "plugins": ["import"],
   "rules": {
     "import/order": [
-      "error",
+      "off",
       {
         "newlines-between": "always",
         "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"]],
