@@ -1,4 +1,5 @@
 import { Account, Profile } from "next-auth"
+
 import dbConnect from "../dbConnect"
 import User from "../models/UserModel"
 

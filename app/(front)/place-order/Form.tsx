@@ -9,10 +9,10 @@ import useSWRMutation from 'swr/mutation';
 
 import CheckoutSteps from '@/components/checkout/CheckoutSteps';
 import useCartService from '@/lib/hooks/useCartStore';
+import { VNDFormatter } from '@/lib/utils';
 
 import image_qr_bank from '../../../public/images/bidv_qr_Tin.png'
 import image_qr_momo from '../../../public/images/qr_momo_Tin.png'
-import { VNDFormatter } from '@/lib/utils';
 
 const Form = () => {
   const router = useRouter();

@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { getPlaiceholder } from 'plaiceholder';
-
-import { Product } from '@/lib/models/ProductModel';
-
-import { Rating } from './Rating';
 import { VNDFormatter } from '@/lib/utils';
+import { Product } from '@/lib/models/ProductModel';
+import { Rating } from './Rating';
 
 
 const ProductItem = async ({ product }: { product: Product }) => {
