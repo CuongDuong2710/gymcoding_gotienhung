@@ -2,7 +2,6 @@ import bcrypt from 'bcryptjs';
 import NextAuth, { NextAuthConfig } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google'
-
 import { signInWithOauth, getUserByEmail } from './actions/auth.action';
 import dbConnect from './dbConnect';
 import UserModel from './models/UserModel';

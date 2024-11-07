@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
 import { Product } from '@/lib/models/ProductModel';
 import { VNDFormatter } from '@/lib/utils';
+
 import { getPlaiceholder } from 'plaiceholder';
+
 import { Rating } from './Rating';
 
 const ProductItem = async ({ product }: { product: Product }) => {
