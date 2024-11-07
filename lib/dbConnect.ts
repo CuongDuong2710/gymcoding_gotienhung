@@ -13,7 +13,7 @@ const dbConnect = async () => {
     cached.promise = cached.promise || mongoose.connect(MONGODB_URI, {
         dbName: 'gotienhung',
         bufferCommands: false
-    })
+    }).then((moongose) => moongose.connection)
 
     cached.conn = await cached.promise
 
