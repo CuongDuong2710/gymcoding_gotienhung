@@ -20,7 +20,7 @@ export default function Users() {
           'Content-Type': 'application/json',
         },
       });
-      const data = await res.json();
+      const data = await res.clone().json();
       res.ok
         ? toast.success('Xoá user thành công', {
             id: toastId,

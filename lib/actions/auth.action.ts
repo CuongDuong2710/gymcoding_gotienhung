@@ -12,7 +12,6 @@ export const signInWithOauth = async ({
     account,
     profile
 }: SignInWithOauthParams) => {
-    console.log(`SignInWithOauthParams > account ${account}`)
     await dbConnect()
 
     const user = await User.findOne(({ email: profile.email }))
@@ -25,7 +24,6 @@ export const signInWithOauth = async ({
         provider: account.provider
     })
 
-    console.log(`SignInWithOauthParams > newUser ${newUser}`)
     await newUser.save()
 
     return true

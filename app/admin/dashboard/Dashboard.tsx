@@ -44,8 +44,6 @@ export const options = {
 const Dashboard = () => {
   const { data: summary, error } = useSWR(`/api/admin/summary`);
 
-  console.log(summary);
-
   if (error) return error.message;
   if (!summary) return 'Loading...';
 

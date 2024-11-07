@@ -28,7 +28,7 @@ const OrderDetails = ({ orderId, paypalClientId }: IOrderDetails) => {
           'Content-Type': 'application/json',
         },
       });
-      const data = await res.json();
+      const data = await res.clone().json();
       res.ok
         ? toast.success('Đã giao hàng thành công')
         : toast.error(data.message);
@@ -44,7 +44,7 @@ const OrderDetails = ({ orderId, paypalClientId }: IOrderDetails) => {
           'Content-Type': 'application/json',
         }
       })
-      const data = await res.json()
+      const data = await res.clone().json()
       res.ok
        ? toast.success('Đã thanh toán thành công')
        : toast.error(data.message)

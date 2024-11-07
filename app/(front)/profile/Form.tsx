@@ -64,7 +64,7 @@ const Form = () => {
         };
         await update(newSession);
       } else {
-        const data = await res.json();
+        const data = await res.clone().json();
         toast.error(data.message || 'error');
       }
     } catch (err: any) {

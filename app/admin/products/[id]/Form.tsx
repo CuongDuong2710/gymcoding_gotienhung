@@ -24,7 +24,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
         },
         body: JSON.stringify(arg),
       });
-      const data = await res.json();
+      const data = await res.clone().json();
       if (!res.ok) return toast.error(data.message);
 
       toast.success('Cập nhật sản phẩm thành công');
@@ -111,8 +111,7 @@ export default function ProductEditForm({ productId }: { productId: string }) {
           body: formData,
         },
       );
-      const data = await res.json();
-      console.log(data.secure_url);
+      const data = await res.clone().json();
       setValue('image', data.secure_url);
       toast.success('Upload file thành công', {
         id: toastId,

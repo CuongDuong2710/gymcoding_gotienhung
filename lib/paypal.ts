@@ -42,7 +42,6 @@ export const paypal = {
 async function generateAccessToken() {
   const { PAYPAL_CLIENT_ID, PAYPAL_APP_SECRET } = process.env;
 
-  console.log(process.env.PAYPAL_CLIENT_ID, process.env.PAYPAL_APP_SECRET);
   const auth = Buffer.from(PAYPAL_CLIENT_ID + ':' + PAYPAL_APP_SECRET).toString(
     'base64',
   );

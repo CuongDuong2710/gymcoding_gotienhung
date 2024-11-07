@@ -24,7 +24,7 @@ export default function UserEditForm({ userId }: { userId: string }) {
         },
         body: JSON.stringify(arg),
       });
-      const data = await res.json();
+      const data = await res.clone().json();
       if (!res.ok) return toast.error(data.message);
 
       toast.success('Cập nhật user thành công');

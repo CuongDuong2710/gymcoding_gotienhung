@@ -62,7 +62,7 @@ const Form = () => {
           // http://localhost:3000/signin?callbackUrl=/&success=Account%20has%20been%20created
         );
       } else {
-        const data = await res.json();
+        const data = await res.clone().json();
         throw new Error(data.message);
       }
     } catch (err: any) {

@@ -23,3 +23,9 @@ Features:
 <p align="center" width="100%">
   <img src="public/readme/Fashion-Corner-Fullstack-Next-js-Store-dark.webp" alt="Next.js 14 Fullstack Ecommerce App - Home page dark mode" title="screen2" />
 </p>
+
+## Deploy
+
+- import/order in .eslintrc.json
+- Typescript check for implicit type for any
+- TypeError: Response.clone: Body has already been consumed. at webidl.errors.exception -> res.clone().json

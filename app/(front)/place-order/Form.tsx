@@ -46,7 +46,7 @@ const Form = () => {
           totalPrice,
         }),
       });
-      const data = await res.json();
+      const data = await res.clone().json();
       if (res.ok) {
         clear();
         toast.success('Đặt hàng thành công');

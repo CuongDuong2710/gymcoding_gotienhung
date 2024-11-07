@@ -24,7 +24,7 @@ export default function Products() {
           'Content-Type': 'application/json',
         },
       });
-      const data = await res.json();
+      const data = await res.clone().json();
       res.ok
         ? toast.success('Xoá sản phẩm thành công', {
             id: toastId,
@@ -44,7 +44,7 @@ export default function Products() {
           'Content-Type': 'application/json',
         },
       });
-      const data = await res.json();
+      const data = await res.clone().json();
       if (!res.ok) return toast.error(data.message);
 
       toast.success('Tạo mới sản phẩm thành công');
