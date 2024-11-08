@@ -6,36 +6,76 @@ import ProductModel, { Product } from '@/lib/models/ProductModel';
 export const revalidate = 3600;
 
 const getLatest = cache(async () => {
-  await dbConnect();
-  const products = await ProductModel.find({})
+  try {
+    await dbConnect();
+    const products = await ProductModel.find({})
     .sort({ _id: -1 })
     .limit(8)
     .lean(); // Converts the MongoDB documents to plain JavaScript objects
-  return products as Product[];
+    return products as Product[];
+  } catch (error: any) {
+    return Response.json(
+      { message: error.message },
+      {
+        status: 500
+      }
+    )
+  }
+  
 });
 
 const getTopRated = cache(async () => {
-  await dbConnect();
+  try {
+    await dbConnect();
   const products = await ProductModel.find({})
     .sort({ rating: -1 }) // Sort by rating in descending order
     .limit(8)
     .lean(); // Converts the MongoDB documents to plain JavaScript objects
-  return products as Product[];
+    return products as Product[];
+  } catch (error: any) {
+    return Response.json(
+      { message: error.message },
+      {
+        status: 500
+      }
+    )
+  }
+  
 });
 
 // intentionally disable Next.js Cache to better demo
 const getFeatured = async () => {
-  await dbConnect();
-  const products = await ProductModel.find({ isFeatured: true })
+  try {
+    await dbConnect();
+    const products = await ProductModel.find({ isFeatured: true })
     .limit(3)
     .lean();
-  return products as Product[];
+    return products as Product[];
+  } catch (error: any) {
+    return Response.json(
+      { message: error.message },
+      {
+        status: 500
+      }
+    )
+  }
+  
 };
 
 const getBySlug = cache(async (slug: string) => {
-  await dbConnect();
-  const product = await ProductModel.findOne({ slug }).lean();
-  return product as Product;
+  try {
+    await dbConnect();
+    const product = await ProductModel.findOne({ slug }).lean();
+    return product as Product;
+  } catch (error: any) {
+    return Response.json(
+      { message: error.message },
+      {
+        status: 500
+      }
+    )
+  }
+  
 });
 
 const PAGE_SIZE = 6;
@@ -127,9 +167,19 @@ const getByQuery = cache(
 );
 
 const getCategories = cache(async () => {
-  await dbConnect();
-  const categories = await ProductModel.find().distinct('category');
-  return categories;
+  try {
+    await dbConnect();
+    const categories = await ProductModel.find().distinct('category');
+    return categories;
+  } catch (error: any) {
+    return Response.json(
+      { message: error.message },
+      {
+        status: 500
+      }
+    )
+  }
+  
 });
 
 const productService = {
