@@ -14,13 +14,7 @@ const getLatest = cache(async () => {
     .lean(); // Converts the MongoDB documents to plain JavaScript objects
     return products as Product[];
   } catch (error: any) {
-    // throw new Error('Failed to fetch products');
-    return Response.json(
-      { message: error.message },
-      {
-        status: 500
-      }
-    )
+    throw new Error('Failed to fetch latest products');
   }
   
 });
@@ -34,12 +28,7 @@ const getTopRated = cache(async () => {
     .lean(); // Converts the MongoDB documents to plain JavaScript objects
     return products as Product[];
   } catch (error: any) {
-    return Response.json(
-      { message: error.message },
-      {
-        status: 500
-      }
-    )
+    throw new Error('Failed to fetch top rated products');
   }
   
 });
@@ -53,20 +42,18 @@ const getFeatured = async () => {
     .lean();
     return products as Product[];
   } catch (error: any) {
-    return Response.json(
-      { message: error.message },
-      {
-        status: 500
-      }
-    )
+    throw new Error('Failed to fetch featured products');
   }
-  
 };
 
 const getBySlug = cache(async (slug: string) => {
-  await dbConnect();
-  const product = await ProductModel.findOne({ slug }).lean();
-  return product as Product;
+  try {
+    await dbConnect();
+    const product = await ProductModel.findOne({ slug }).lean();
+    return product as Product;
+  } catch (error: any) {
+    throw new Error('Failed to fetch product by slug');
+  }
 });
 
 const PAGE_SIZE = 6;
@@ -162,15 +149,9 @@ const getCategories = cache(async () => {
     await dbConnect();
     const categories = await ProductModel.find().distinct('category');
     return categories;
-  } catch (error: any) {
-    return Response.json(
-      { message: error.message },
-      {
-        status: 500
-      }
-    )
+  } catch (error) {
+    throw new Error('Failed to fetch categories')
   }
-  
 });
 
 const productService = {
