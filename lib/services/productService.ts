@@ -14,6 +14,7 @@ const getLatest = cache(async () => {
     .lean(); // Converts the MongoDB documents to plain JavaScript objects
     return products as Product[];
   } catch (error: any) {
+    // throw new Error('Failed to fetch products');
     return Response.json(
       { message: error.message },
       {
@@ -63,19 +64,9 @@ const getFeatured = async () => {
 };
 
 const getBySlug = cache(async (slug: string) => {
-  try {
-    await dbConnect();
-    const product = await ProductModel.findOne({ slug }).lean();
-    return product as Product;
-  } catch (error: any) {
-    return Response.json(
-      { message: error.message },
-      {
-        status: 500
-      }
-    )
-  }
-  
+  await dbConnect();
+  const product = await ProductModel.findOne({ slug }).lean();
+  return product as Product;
 });
 
 const PAGE_SIZE = 6;
