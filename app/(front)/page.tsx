@@ -56,9 +56,9 @@ const HomePage = () => {
       {/* <Suspense fallback={<ProductItemsSkeleton qty={4} name='Top Rated' />}>
         <Slider />
       </Suspense> */}
-      {/* <div>
+      <div>
         <Slider />
-      </div> */}
+      </div>
 
       <ReadMore>
         <Text />

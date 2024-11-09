@@ -9,7 +9,7 @@ const getLatest = cache(async () => {
   await dbConnect();
   const products = await ProductModel.find({})
     .sort({ _id: -1 })
-    .limit(8)
+    .limit(4)
     .lean(); // Converts the MongoDB documents to plain JavaScript objects
   return products as Product[];
 });
@@ -18,7 +18,7 @@ const getTopRated = cache(async () => {
   await dbConnect();
   const products = await ProductModel.find({})
     .sort({ rating: -1 }) // Sort by rating in descending order
-    .limit(8)
+    .limit(4)
     .lean(); // Converts the MongoDB documents to plain JavaScript objects
   return products as Product[];
 });
