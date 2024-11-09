@@ -17,6 +17,8 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_APP_DESC,
 };
 
+export const revalidate = 0;
+
 const HomePage = () => {
   return (
     <div className='my-8 flex flex-col gap-4 md:gap-16'>
