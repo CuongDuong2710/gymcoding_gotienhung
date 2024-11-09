@@ -9,8 +9,8 @@ const getLatest = cache(async () => {
   await dbConnect();
   const products = await ProductModel.find({})
     .sort({ _id: -1 })
-    .limit(6)
-    .lean(); // Converts the MongoDB documents to plain JavaScript objects
+    .limit(8)
+    // .lean(); // Converts the MongoDB documents to plain JavaScript objects
   return products as Product[];
 });
 

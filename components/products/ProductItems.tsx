@@ -7,6 +7,10 @@ const ProductItems = async () => {
   // await delay(4000);
   const latestProducts = await productService.getLatest();
 
+  if (!latestProducts || latestProducts.length == 0) {
+    return <p>Không có sản phẩm nào</p>
+  }
+
   return (
     <div>
       <h2 className='my-2 text-2xl md:my-4'>Sản phẩm mới nhất</h2>
