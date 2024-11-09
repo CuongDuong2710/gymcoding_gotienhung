@@ -50,13 +50,15 @@ const HomePage = () => {
         <ProductItems />
       </Suspense> */}
       <div>
-        <p>Latest Products</p>
         <ProductItems />
       </div>
 
       {/* <Suspense fallback={<ProductItemsSkeleton qty={4} name='Top Rated' />}>
         <Slider />
       </Suspense> */}
+      <div>
+        <Slider />
+      </div>
 
       <ReadMore>
         <Text />
