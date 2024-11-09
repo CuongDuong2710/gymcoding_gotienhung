@@ -5,20 +5,6 @@ import ProductModel, { Product } from '@/lib/models/ProductModel';
 
 export const revalidate = 3600;
 
-export async function getServerSideProps() {
-  await dbConnect();
-  const products = await ProductModel.find({})
-    .sort({ _id: -1 })
-    .limit(8)
-    .select('name image slug rating brand price')
-    .lean(); // Converts the MongoDB documents to plain JavaScript objects
-  return {
-    props: {
-      moreProducts: products as Product[]
-    }
-  }
-}
-
 const getLatest = cache(async () => {
   await dbConnect();
   const products = await ProductModel.find({})
