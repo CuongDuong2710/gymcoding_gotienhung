@@ -4,7 +4,7 @@ import { convertDocToObj, delay } from '@/lib/utils';
 import ProductItem from './ProductItem';
 
 const ProductItems = async () => {
-  await delay(4000);
+  // await delay(4000);
   const latestProducts = await productService.getLatest();
 
   return (
@@ -12,7 +12,7 @@ const ProductItems = async () => {
       <h2 className='my-2 text-2xl md:my-4'>Sản phẩm mới nhất</h2>
       <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4'>
         {latestProducts.map((product) => (
-          <ProductItem key={product.slug} product={convertDocToObj(product)} />
+          <ProductItem key={product.slug} product={product} />
         ))}
       </div>
     </div>
