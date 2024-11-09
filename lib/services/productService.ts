@@ -10,7 +10,8 @@ const getLatest = cache(async () => {
   const products = await ProductModel.find({})
     .sort({ _id: -1 })
     .limit(8)
-    // .lean(); // Converts the MongoDB documents to plain JavaScript objects
+    .select('name image slug rating brand price')
+    .lean(); // Converts the MongoDB documents to plain JavaScript objects
   return products as Product[];
 });
 
