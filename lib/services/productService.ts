@@ -8,9 +8,9 @@ export const revalidate = 3600;
 const getLatest = cache(async () => {
   await dbConnect();
   const products = await ProductModel.find({})
-    .sort({ _id: -1 })
+    /* .sort({ _id: -1 })
     .limit(4)
-    .lean(); // Converts the MongoDB documents to plain JavaScript objects
+    .lean(); */ // Converts the MongoDB documents to plain JavaScript objects
   return products as Product[];
 });
 
