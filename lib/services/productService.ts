@@ -3,57 +3,39 @@ import { cache } from 'react';
 import dbConnect from '@/lib/dbConnect';
 import ProductModel, { Product } from '@/lib/models/ProductModel';
 
-export const revalidate = 0;
+export const revalidate = 3600;
 
 const getLatest = cache(async () => {
-  try {
-    await dbConnect();
-    const products = await ProductModel.find({})
+  await dbConnect();
+  const products = await ProductModel.find({})
     .sort({ _id: -1 })
     .limit(8)
     .lean(); // Converts the MongoDB documents to plain JavaScript objects
-    return products as Product[];
-  } catch (error: any) {
-    throw new Error('Failed to fetch latest products');
-  }
-  
+  return products as Product[];
 });
 
 const getTopRated = cache(async () => {
-  try {
-    await dbConnect();
+  await dbConnect();
   const products = await ProductModel.find({})
     .sort({ rating: -1 }) // Sort by rating in descending order
     .limit(8)
     .lean(); // Converts the MongoDB documents to plain JavaScript objects
-    return products as Product[];
-  } catch (error: any) {
-    throw new Error('Failed to fetch top rated products');
-  }
-  
+  return products as Product[];
 });
 
 // intentionally disable Next.js Cache to better demo
 const getFeatured = async () => {
-  try {
-    await dbConnect();
-    const products = await ProductModel.find({ isFeatured: true })
+  await dbConnect();
+  const products = await ProductModel.find({ isFeatured: true })
     .limit(3)
     .lean();
-    return products as Product[];
-  } catch (error: any) {
-    throw new Error('Failed to fetch featured products');
-  }
+  return products as Product[];
 };
 
 const getBySlug = cache(async (slug: string) => {
-  try {
-    await dbConnect();
-    const product = await ProductModel.findOne({ slug }).lean();
-    return product as Product;
-  } catch (error: any) {
-    throw new Error('Failed to fetch product by slug');
-  }
+  await dbConnect();
+  const product = await ProductModel.findOne({ slug }).lean();
+  return product as Product;
 });
 
 const PAGE_SIZE = 6;
@@ -145,13 +127,9 @@ const getByQuery = cache(
 );
 
 const getCategories = cache(async () => {
-  try {
-    await dbConnect();
-    const categories = await ProductModel.find().distinct('category');
-    return categories;
-  } catch (error) {
-    throw new Error('Failed to fetch categories')
-  }
+  await dbConnect();
+  const categories = await ProductModel.find().distinct('category');
+  return categories;
 });
 
 const productService = {
