@@ -12,7 +12,7 @@ export const PUT = auth(async (req) => {
   const { name, email, password } = await req.json();
   await dbConnect();
   try {
-    const dbUser = await UserModel.findById(user._id);
+    const dbUser = await UserModel.findById(user?._id);
     if (!dbUser) {
       return Response.json(
         { message: 'User not found' },

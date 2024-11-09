@@ -41,9 +41,9 @@ export default function UserEditForm({ userId }: { userId: string }) {
 
   useEffect(() => {
     if (!user) return;
-    setValue('name', user.name);
-    setValue('email', user.email);
-    setValue('isAdmin', user.isAdmin);
+    setValue('name', user?.name);
+    setValue('email', user?.email);
+    setValue('isAdmin', user?.isAdmin);
   }, [user, setValue]);
 
   const formSubmit = async (formData: any) => {

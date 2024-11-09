@@ -50,15 +50,15 @@ export default function Users() {
           </thead>
           <tbody>
             {users.map((user: User) => (
-              <tr key={user._id}>
-                <td>{formatId(user._id)}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.isAdmin ? 'YES' : 'NO'}</td>
+              <tr key={user?._id}>
+                <td>{formatId(user?._id)}</td>
+                <td>{user?.name}</td>
+                <td>{user?.email}</td>
+                <td>{user?.isAdmin ? 'YES' : 'NO'}</td>
 
                 <td>
                   <Link
-                    href={`/admin/users/${user._id}`}
+                    href={`/admin/users/${user?._id}`}
                     type='button'
                     className='btn btn-ghost btn-sm'
                   >
@@ -66,7 +66,7 @@ export default function Users() {
                   </Link>
                   &nbsp;
                   <button
-                    onClick={() => deleteUser({ userId: user._id })}
+                    onClick={() => deleteUser({ userId: user?._id })}
                     type='button'
                     className='btn btn-ghost btn-sm'
                   >

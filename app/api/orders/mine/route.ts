@@ -13,6 +13,6 @@ export const GET = auth(async (req: any) => {
   }
   const { user } = req.auth;
   await dbConnect();
-  const orders = await OrderModel.find({ user: user._id });
+  const orders = await OrderModel.find({ user: user?._id });
   return Response.json(orders);
 });

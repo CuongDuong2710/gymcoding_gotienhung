@@ -59,14 +59,14 @@ const Menu = () => {
           <li>
             <div className='dropdown dropdown-end dropdown-bottom'>
               <label tabIndex={0} className='btn btn-ghost rounded-btn'>
-                {session.user.name}
+                {session.user?.name}
                 <ChevronDown />
               </label>
               <ul
                 tabIndex={0}
                 className='menu dropdown-content z-[1] w-52 rounded-box bg-base-300 p-2 shadow '
               >
-                {session.user.isAdmin && (
+                {session.user?.isAdmin && (
                   <li onClick={handleClick}>
                     <Link href='/admin/dashboard'>Trang quản trị</Link>
                   </li>

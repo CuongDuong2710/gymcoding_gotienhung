@@ -59,20 +59,20 @@ export const config: NextAuthConfig = {
         const user = await getUserByEmail({ email: token.email })
 
         token.user = {
-          _id: user._id,
-          email: user.email,
-          name: user.name,
-          isAdmin: user.isAdmin,
-          provider: user.provider
+          _id: user?._id,
+          email: user?.email,
+          name: user?.name,
+          isAdmin: user?.isAdmin,
+          provider: user?.provider
         };
       }
       if (trigger === 'update' && session) {
         token.user = {
           ...token.user,
-          email: session.user.email,
-          name: session.user.name,
-          isAdmin: session.user.isAdmin,
-          provider: session.user.provider
+          email: session.user?.email,
+          name: session.user?.name,
+          isAdmin: session.user?.isAdmin,
+          provider: session.user?.provider
         };
       }
       return token;
@@ -83,10 +83,10 @@ export const config: NextAuthConfig = {
           ...session,
           user: {
             ...session.user,
-            _id: token.user._id,
-            email: token.user.email,
-            isAdmin: token.user.isAdmin,
-            provider: token.user.provider
+            _id: token.user?._id,
+            email: token.user?.email,
+            isAdmin: token.user?.isAdmin,
+            provider: token.user?.provider
           },
         }
       }

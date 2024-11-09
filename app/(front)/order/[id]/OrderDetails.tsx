@@ -177,7 +177,7 @@ const OrderDetails = ({ orderId, paypalClientId }: IOrderDetails) => {
                   </div>
                 </li>
 
-                {session?.user.isAdmin && (
+                {session?.user?.isAdmin && (
                   <>
                     <li>
                       <button

@@ -56,7 +56,7 @@ export const POST = auth(async (req: any) => {
       totalPrice,
       shippingAddress: payload.shippingAddress,
       paymentMethod: payload.paymentMethod,
-      user: user._id,
+      user: user?._id,
     });
 
     const createdOrder = await newOrder.save();

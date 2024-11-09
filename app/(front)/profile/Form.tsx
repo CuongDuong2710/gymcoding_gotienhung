@@ -33,8 +33,8 @@ const Form = () => {
 
   useEffect(() => {
     if (session && session.user) {
-      setValue('name', session.user.name!);
-      setValue('email', session.user.email!);
+      setValue('name', session.user?.name!);
+      setValue('email', session.user?.email!);
     }
   }, [router, session, setValue]);
 

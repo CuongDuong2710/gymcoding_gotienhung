@@ -45,5 +45,5 @@ export const getUserByEmail = async ({
         throw new Error("User does not exist")
     }
 
-    return {...user._doc, _id: user._id.toString()}
+    return {...user?._doc, _id: user?._id.toString()}
 }
