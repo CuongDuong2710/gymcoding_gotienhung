@@ -22,11 +22,11 @@ export const revalidate = 0;
 const HomePage = () => {
   return (
     <div className='my-8 flex flex-col gap-4 md:gap-16'>
-      {/* <div>
+      <div>
         <Suspense fallback={<CarouselSkeleton />}>
           <Carousel />
         </Suspense>
-      </div> */}
+      </div>
       <div className='flex flex-col gap-8 md:flex-row'>
         <div className='flex-1'>
           <p className='text-nowrap text-4xl font-semibold md:text-6xl'>
@@ -44,11 +44,11 @@ const HomePage = () => {
       <Categories />
       <Icons />
 
-      <Suspense
+      {/* <Suspense
         fallback={<ProductItemsSkeleton qty={8} name='Latest Products' />}
       >
         <ProductItems />
-      </Suspense>
+      </Suspense> */}
 
       <Suspense fallback={<ProductItemsSkeleton qty={4} name='Top Rated' />}>
         <Slider />
