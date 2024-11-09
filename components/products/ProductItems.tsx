@@ -8,7 +8,7 @@ const ProductItems = async () => {
   const latestProducts = await productService.getLatest();
 
   if (!latestProducts || latestProducts.length == 0) {
-    return <p>Không có sản phẩm nào</p>
+    return <p>Không có sản phẩm nào!</p>
   }
 
   return (

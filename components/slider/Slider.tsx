@@ -7,6 +7,10 @@ import { convertDocToObj } from '@/lib/utils';
 const Slider = async () => {
   const topRated = await productService.getTopRated();
 
+  if (!topRated || topRated.length == 0) {
+    return <p>Không có sản phẩm nào!</p>
+  }
+
   return (
     <div>
       <h2 className='my-2 text-2xl md:my-4'>Top đánh giá</h2>
