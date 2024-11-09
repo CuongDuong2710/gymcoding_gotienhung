@@ -1,4 +1,4 @@
-import productService from '@/lib/services/productService';
+import productService, { getServerSideProps } from '@/lib/services/productService';
 import { convertDocToObj, delay } from '@/lib/utils';
 
 import ProductItem from './ProductItem';
@@ -6,8 +6,9 @@ import ProductItem from './ProductItem';
 const ProductItems = async () => {
   // await delay(4000);
   const latestProducts = await productService.getLatest();
+  const { props: { moreProducts } } = await getServerSideProps()
 
-  if (!latestProducts || latestProducts.length == 0) {
+  if (!moreProducts || moreProducts.length == 0) {
     return <p>Không có sản phẩm nào!</p>
   }
 
@@ -15,7 +16,7 @@ const ProductItems = async () => {
     <div>
       <h2 className='my-2 text-2xl md:my-4'>Sản phẩm mới nhất</h2>
       <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4'>
-        {latestProducts.map((product) => (
+        {moreProducts.map((product) => (
           <ProductItem key={product.slug} product={product} />
         ))}
       </div>
